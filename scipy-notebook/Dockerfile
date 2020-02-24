@@ -13,7 +13,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 USER $NB_UID
-
+#RUN echo $NB_USER && mkdir /opt/conda/pkgs
 # Install Python 3 packages
 RUN conda install --quiet --yes \
     'beautifulsoup4=4.8.*' \
@@ -32,6 +32,7 @@ RUN conda install --quiet --yes \
     'pandas=0.25.*' \
     'patsy=0.5.*' \
     'protobuf=3.11.*' \
+    'python=3.8' \
     'scikit-image=0.16.*' \
     'scikit-learn=0.22.*' \
     'scipy=1.4.*' \
